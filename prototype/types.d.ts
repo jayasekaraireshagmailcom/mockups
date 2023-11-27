@@ -45,3 +45,17 @@ type Categories = {
     title:string,
     url:string,
 }
+
+type ProductCount = {
+    params:{
+        count:number
+    },
+    searchParams:{
+
+    }
+}
+
+type Margin = {
+    style:object,
+    children:React.ReactNode
+}

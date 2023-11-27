@@ -4,9 +4,10 @@ import Space from './components/Space'
 import Pannel from './components/Pannel'
 import Item from './components/Item'
 import ClothFrame from './components/Paper'
-import {fetchSalesData} from './api/page'
 import Image from 'next/image'
-import Link from 'next/link';
+import Link from 'next/link'
+import Margins from './components/Margins'
+import {fetchSalesData} from './api/page'
 
 const categories = [
   {
@@ -16,7 +17,6 @@ const categories = [
   {
     title:"Women's Clothing",
     url:"/women-clothing"
-
   }
 ];
 
@@ -25,7 +25,7 @@ export default async function Home() {
 
   const products = await fetchSalesData(4)
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main>
     <Space style={{ m: 10 }} />
     <Pannel spacing={{ xs: 2}}>
       <Item xs={0.5}></Item>
@@ -44,13 +44,12 @@ export default async function Home() {
           return (
             <Fragment key={index}>
               <Item xs={x} sm={x} md={x} >
-                <div style={{marginLeft:"5em",marginRight:"5em"}}>
+                <Margins style={{marginLeft:"5em",marginRight:"5em"}}>
                   <ClothFrame variant="elevation" elevation={1}>
                     <Label sx={{ width: '100%', maxWidth: 500, fontWeight: 'bold' }}  variant="subtitle2" text={(val.title.split(' ').length > 4) ? val.title.split(' ').splice(0, 4).join(" "):val.title} prodCount={products.length}/>
                     <Space style={{ m: 2 }} />
                     <Image
                       src={val.image}
-                      layout="responsive"
                       width={200}
                       height={200}
                       alt={val.title}
@@ -61,8 +60,7 @@ export default async function Home() {
                     <Label sx={{ width: '100%', maxWidth: 500, color: '#0F42FD', fontWeight: 'bold' }}  variant='h6' text={'Rs ' + val.price}  prodCount={products.length}/>
                     <Label sx={{ width: '100%', maxWidth: 500 }}  variant='h6' text={(val.description.split(' ').length > 15) ? val.description.split(' ').splice(0, 15).join(" "):val.description + `...`} prodCount={products.length}/>
                   </ClothFrame>
-
-                </div>
+                </Margins>
               </Item>
             </Fragment>
           )
@@ -83,14 +81,13 @@ export default async function Home() {
     <Pannel spacing={{  xs: 2, md: 3 }}>
     <Item xs={0.5}></Item>
       {
-      categories.map((_val:Categories, _index:number) => <Fragment key={_index}>
+        categories.map((_val:Categories, _index:number) => <Fragment key={_index}>
         <Item xs={5.5}>
         <ClothFrame variant="elevation" elevation={1} sx={{position:'relative',backgroundColor: _index%2===0?"#2BD9AF":"#FF5D84"}}>
-        <Link href={_val.url} style={{ color: 'inherit', textDecoration: 'inherit'}}><Label sx={{ width: '100%', maxWidth: 800, color: '#FFFFFF', fontWeight: 'bold', fontSize:30}}  variantType='subtitle1' text={_val.title}  /></Link>
+        <Link href={_val.url+'/'+products.length} style={{ color: 'inherit', textDecoration: 'inherit'}}><Label sx={{ width: '100%', maxWidth: 800, color: '#FFFFFF', fontWeight: 'bold', fontSize:30}}  variantType='subtitle1' text={_val.title}  /></Link>
         </ClothFrame>
         </Item>
-        </Fragment>)
-        
+        </Fragment>)        
       }
     <Item xs={0.5}></Item>
     </Pannel>

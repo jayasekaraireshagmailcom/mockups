@@ -20,7 +20,6 @@ export default function Header(props: Props) {
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }} style={{color:"#000",fontWeight: "bold"}} align="center">
                 Modern Walk
           </Typography>
-
         </Toolbar>
       </AppBar>
     </Box>
