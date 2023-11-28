@@ -59,3 +59,10 @@ type Margin = {
     style:object,
     children:React.ReactNode
 }
+
+type Button = {
+    fnc:function,
+    variant:string,
+    text:string,
+    href:string
+}
