@@ -95,8 +95,8 @@ export default async function Home() {
       </Pannel>
       </main>
     )
-  }catch(error){
-    throw error;
+  }catch(error:any){
+    throw new Error(error);
   }
 
 }
