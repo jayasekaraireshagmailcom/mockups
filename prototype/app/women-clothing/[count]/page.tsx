@@ -39,6 +39,7 @@ export default async function page(count:ProductCount) {
                       width={200}
                       height={200}
                       alt={val.title}
+                      priority={true}
                     />
                     <Space style={{ m: 2 }} />
                   </ClothFrame>
