@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   description: 'Technical interview',
 }
 
+export const viewport = {
+  width: 1,
+  themeColor: 'dark',
+}
+
 export default function RootLayout({
   children,
 }: {

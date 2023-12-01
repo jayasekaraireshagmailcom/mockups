@@ -8,7 +8,7 @@ const DemoPaper = styled(Paper)(({ theme,...props }) => ({
     padding: theme.spacing(2),
     ...theme.typography.body2,
     textAlign: 'center',
-    borderRadius: '10px',
+    borderRadius: '20px',
     border: '1px solid #F5F5F5',
     boxShadow: '2px 2px 10px #F5F5F5',
   }));

@@ -4,6 +4,7 @@ type Label = {
     text:string,
     style:object,
     prodCount:number,
+    align:string
 }
 
 type Space = {
@@ -44,6 +45,7 @@ type Cloth = {
 type Categories = {
     title:string,
     url:string,
+    params:string
 }
 
 type ProductCount = {
@@ -61,8 +63,24 @@ type Margin = {
 }
 
 type Button = {
-    fnc:function,
+    fnc?:function,
     variant:string,
     text:string,
-    href:string
+    href?:string,
+    type:string,
+    disabled:boolean
+}
+
+type Input = {
+    id:string,
+    label:string,
+    variant:string,
+    name:string,
+    type:string,
+    onChange?:function
+}
+
+type Alert = {
+    severity:string,
+    children:React.ReactNode,
 }

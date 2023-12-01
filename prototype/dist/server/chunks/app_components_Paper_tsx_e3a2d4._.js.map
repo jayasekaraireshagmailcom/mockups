@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/app/components/Paper.tsx"],"sourcesContent":["'use client'\r\nimport Paper from '@mui/material/Paper';\r\nimport { styled } from '@mui/material/styles';\r\n\r\nconst DemoPaper = styled(Paper)(({ theme,...props }) => ({\r\n    width: '100%',\r\n    height: 'auto',\r\n    padding: theme.spacing(2),\r\n    ...theme.typography.body2,\r\n    textAlign: 'center',\r\n    borderRadius: '10px',\r\n    border: '1px solid #F5F5F5',\r\n    boxShadow: '2px 2px 10px #F5F5F5',\r\n  }));\r\nexport default function ClothFrame(props:any) {\r\n    const {children,variant,elevation,sx} = props  \r\n\r\n    return (\r\n        <DemoPaper variant={variant} elevation={elevation} square={false} sx={sx} >{children}</DemoPaper>\r\n    )\r\n}\r\n"],"names":[],"mappings":";;;;;;;AAAA;;;;AAIA,MAAM,YAAY,iTAAc,CAAC,EAAE,KAAK,EAAC,GAAG,OAAO,GAAK,CAAC;QACrD,OAAO;QACP,QAAQ;QACR,SAAS,MAAM,OAAO,CAAC;QACvB,GAAG,MAAM,UAAU,CAAC,KAAK;QACzB,WAAW;QACX,cAAc;QACd,QAAQ;QACR,WAAW;IACb,CAAC;AACY,SAAS,WAAW,KAAS;IACxC,MAAM,EAAC,QAAQ,EAAC,OAAO,EAAC,SAAS,EAAC,EAAE,EAAC,GAAG;IAExC,qBACI,4OAAC;QAAU,SAAS;QAAS,WAAW;QAAW,QAAQ;QAAO,IAAI;kBAAM;;;;;;AAEpF"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

@@ -4,10 +4,10 @@ import Typography from '@mui/material/Typography';
 
 
 export default function Label(props:any) {
-const {sx,variant,text,prodCount} = props
+const {sx,variant,text,prodCount,align} = props
   return (
     <Box sx={sx}>
-      <Typography variant={variant} gutterBottom sx={sx}   fontSize={{
+      <Typography align={align} variant={variant} gutterBottom sx={sx}   fontSize={{
             lg: prodCount ? (prodCount >=12) ? 5 : 20 : sx?.fontSize,
             md: 15,
             sm: 10,
